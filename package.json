@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "The Department of Yaruo of Koushinkyo",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "babel-loader": "^6.2.9",
     "chai": "^3.5.0",
