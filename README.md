@@ -19,9 +19,11 @@
 ## 開発してくれる人向け
 
 webpackでやってますので、node、npmとwebpackをまず入れてください。script.jsをbundle.jsに変換し、それをyaruo-extension.user.jsで読み込んでます。  
+
     cd yaruo-extension  
     npm install  
 ってやって依存するライブラリをnpmでインストール。  
+
     webpack -w
 とやると監視して自動でwebpackしてくれます。
 あとはこれをhttpserverでlocalhostにぶちまけてyaruo-extension.user.jsを弄ったもので拾えば良いでしょう。
