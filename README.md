@@ -1,7 +1,8 @@
 Yaruo-Extension
 ====
 
-やる夫系したらば掲示板用Userscriptです。  
+やる夫系したらば掲示板用Userscriptです。
+
 なんとフォント調整機能はありません。
 
 ## 説明
@@ -23,14 +24,16 @@ Yaruo-Extension
 そのままで使えますが、短編スレで使う場合は以下の設定をしてください。
 
 1. 右上のoptionをクリック。
-1. テキストエリアに、使いたい作者の名前を入力し保存。
+1. テキストエリアに、使いたい作者の名前のトリップを入力し保存(改行で区切れます)。
 
 ## 製作者向け
 ### YouTube埋め込み機能
     <youtube [VIDEO_ID] [TIME]>
     例:<youtube LIlZCmETvsY 2:08>  
-例のような形式で、[https://www.youtube.com/watch?v=LIlZCmETvsY](https://www.youtube.com/watch?v=LIlZCmETvsY)が2:08から再生されます。  
-このスクリプトは、上記が一個でもあるレスは容赦なく埋め込みとみなします。複数ある場合は最初のタグを参照しますが、一応1つにするようにしたほうがベターです。  
+例のような形式で、[https://www.youtube.com/watch?v=LIlZCmETvsY](https://www.youtube.com/watch?v=LIlZCmETvsY)が2:08から再生されます。
+
+このスクリプトは、上記が一個でもあるレスは容赦なく埋め込みとみなします。複数ある場合は最初のタグを参照しますが、一応1つにするようにしたほうがベターです。
+
 また、XSS対策で該当レスと>>1と名前が一致していないとやってくれない仕様なはずなので、短編スレでは効きません。
 
 ## 開発してくれる人向け
@@ -43,7 +46,8 @@ webpackでやってますので、node、npmとwebpackをまず入れてくだ�
 
     webpack -w
 とやると監視して自動でwebpackしてくれます。
-あとはこれをhttpserverでlocalhostにぶちまけてyaruo-extension.user.jsを弄ったもので拾えば良いでしょう。
+
+デバッグしたければこれをhttpserverでlocalhostにぶちまけてyaruo-extension.user.jsを弄ったもので拾えば良いでしょう。
 
 ## ToDo
 1. 他にも埋め込めるものを増やす。
@@ -54,5 +58,6 @@ webpackでやってますので、node、npmとwebpackをまず入れてくだ�
 [MIT](https://github.com/Duct-and-rice/yaruo-extension/blob/master/LICENCE)
 
 ## 作者および連絡先
-恒心教やる夫路線  
+恒心教やる夫路線
+
 代表:[ダクト飯(◆mtwlx/9P3UwK)](https://twitter.com/duct_and_rice)
