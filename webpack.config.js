@@ -2,7 +2,6 @@ var path = require('path');
 var webpack = require('webpack');
 var path = require('path'),
     current = process.cwd();
-var coffee = require("coffee-loader");
 
 module.exports = {
 	entry: './script.js',
@@ -13,7 +12,7 @@ module.exports = {
 			$: 'jquery',
 			jQuery: 'jquery'
 		}),
-		//new webpack.optimize.UglifyJsPlugin()
+		new webpack.optimize.UglifyJsPlugin()
 	],
 
 	loaders: [
@@ -26,7 +25,6 @@ module.exports = {
 				presets: ['es2015']
 			},
 		},
-		{test: /\.coffee$/, loader: "coffee-loader"}
 	],
 
 	resolve: {

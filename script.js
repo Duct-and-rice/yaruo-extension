@@ -1,3 +1,13 @@
+// ==UserScript==
+// @name         yaruo-extension
+// @namespace    https://github.com/Duct-and-rice/yaruo-extension
+// @version      1.0.0
+// @description  A userscript for Yaruo Cluster
+// @author       The Department of Yaruo of Koushinkyo
+// @match        http://jbbs.shitaraba.net/bbs/read.cgi/*
+// @grant        none
+// ==/UserScript==
+
 require('jquery-inview');
 var YouTubePlayer = require('youtube-player');
 $('body').append($('<div id="yaruo-ext-video"><div id="yaruo-ext-player"></div></div><button id="yaruo-ext-button">option</button>'));
@@ -41,7 +51,7 @@ $('dd:contains("youtube")').each(function(){
 	}
 	var term = ($(this).prev('dt').children('font').text()===$('dt:first').children('font').text());
 	var confCheck = false;
-	let confs=localStorage.getItem('conf').split('\n'),i;
+	var confs = localStorage.getItem('conf').split('\n'),i;
 	for(i=0;i<confs.length;i++){
 		confCheck = (($(this).prev('dt').text()).indexOf(confs[i]) != -1 | confCheck);
 	}
