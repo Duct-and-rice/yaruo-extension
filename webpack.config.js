@@ -13,7 +13,7 @@ module.exports = {
 			$: 'jquery',
 			jQuery: 'jquery'
 		}),
-		new webpack.optimize.UglifyJsPlugin()
+		//new webpack.optimize.UglifyJsPlugin()
 	],
 
 	loaders: [

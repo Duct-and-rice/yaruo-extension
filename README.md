@@ -27,3 +27,6 @@ webpackでやってますので、node、npmとwebpackをまず入れてくだ�
     webpack -w
 とやると監視して自動でwebpackしてくれます。
 あとはこれをhttpserverでlocalhostにぶちまけてyaruo-extension.user.jsを弄ったもので拾えば良いでしょう。
+
+## ToDo
+1. 
