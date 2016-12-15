@@ -49,7 +49,8 @@ $('dd:contains("youtube")').each(function(){
 	if(args == void 0){
 		return true;
 	}
-	var term = ($(this).prev('dt').children('font').text()===$('dt:first').children('font').text());
+
+	var term = ($(this).prev('dt').children('font,a[href="mailto:sage"]').text()===$('dt:first').children('font,a[href="mailto:sage"]').text());
 	var confCheck = false;
 	var confs = localStorage.getItem('conf').split('\n'),i;
 	for(i=0;i<confs.length;i++){
