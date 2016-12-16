@@ -16,12 +16,12 @@ Yaruo-Extension
  1. Android - Sleipnir Mobile, Opera Mobileで対応しているらしい。
  1. iOS、専ブラ - 頑張れ。
 1. これをインストール [yaruo-extension.user.js](https://github.com/Duct-and-rice/yaruo-extension/raw/master/yaruo-extension.user.js)
-1. したらば外で起動してほしいサイトがあったら適当に追加。
+1. したらば普通シェルター外で起動してほしいサイトがあったら適当に追加。
 
 これはGithubからrawgit経由で直接最新コードをロードしているので、Githubの乗っ取りやら恒心教徒の急襲やらが怖い人はforkしてyaruo-extension.user.jsを修正して下さい。
 
 ### 使用法
-そのままで使えますが、短編スレで使う場合は以下の設定をしてください。
+そのままで使えますが、短編スレ&普通のやる夫板で使う場合は以下の設定をしてください。
 
 1. 右上のoptionをクリック。
 1. テキストエリアに、使いたい作者の名前のトリップを入力し保存(改行で区切れます)。
@@ -61,3 +61,6 @@ webpackでやってますので、node、npmとwebpackをまず入れてくだ�
 恒心教やる夫路線
 
 代表:[ダクト飯(◆mtwlx/9P3UwK)](https://twitter.com/duct_and_rice)
+
+## 連絡
+### シェルターデバッグさせてください。
