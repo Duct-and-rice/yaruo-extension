@@ -5,6 +5,7 @@
 // @description  A userscript for Yaruo Cluster
 // @author       The Department of Yaruo of Koushinkyo
 // @match        http://jbbs.shitaraba.net/bbs/read.cgi/*
+// @match        http://bbs.yaruyomi.com/test/read.cgi/ban/*
 // @grant        none
 // ==/UserScript==
 
