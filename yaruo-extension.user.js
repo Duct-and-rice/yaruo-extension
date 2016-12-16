@@ -6,6 +6,7 @@
 // @author       The Department of Yaruo of Koushinkyo
 // @match        http://jbbs.shitaraba.net/bbs/read.cgi/*
 // @match        http://bbs.yaruyomi.com/test/read.cgi/ban/*
+// @match        http://yaruoshelter.com/test/read.cgi/yaruo001/*
 // @grant        none
 // ==/UserScript==
 
