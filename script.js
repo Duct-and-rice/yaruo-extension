@@ -139,6 +139,7 @@ selectors.dokaben.each(function() {
 			if (arr.indexOf('nobig') >= 0) {
 				size = '';
 			}
+			if (arr.indexOf('noloop') >= 0) {}
 			for (var i = 0; i < arr.length; i++) {
 				var r = /s(\d+)/;
 				if (arr[i].match(r) != void 0) {
