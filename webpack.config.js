@@ -1,11 +1,13 @@
 var path = require('path');
 var webpack = require('webpack');
 var path = require('path'),
-    current = process.cwd();
+	current = process.cwd();
 
 module.exports = {
 	entry: './script.js',
-	output: {filename: 'bundle.js'},
+	output: {
+		filename: 'bundle.js'
+	},
 	devtool: 'source-map',
 	plugins: [
 		new webpack.ProvidePlugin({
@@ -24,6 +26,7 @@ module.exports = {
 			query: {
 				presets: ['es2015']
 			},
+
 		},
 	],
 

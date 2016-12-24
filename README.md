@@ -36,6 +36,14 @@ Yaruo-Extension
 
 また、XSS対策で該当レスと>>1と名前が一致していないとやってくれない仕様なはずなので、短編スレでは効きません。
 
+### ドガベン機能
+    <dogaben nokomaochi|nobig|nofont|s<ミリ秒> "[内容]">
+    例:<dogaben "ドガベン">
+    例:<dogaben nokomaochi s1000 "コマ落ちなしで1秒周期">
+でドガベン風になる。""内では改行はできませんが\\nができます。あとクリスマスまでに普通のやる夫板対応はできませんすみません。
+
+この機能はXSS対策がついていないので頑張ろう。
+
 ## 開発してくれる人向け
 
 webpackでやってますので、node、npmとwebpackをまず入れてください。script.jsをbundle.jsに変換し、それをyaruo-extension.user.jsで読み込んでます。  
@@ -56,6 +64,8 @@ webpackでやってますので、node、npmとwebpackをまず入れてくだ�
 
 ## ライセンス
 [MIT](https://github.com/Duct-and-rice/yaruo-extension/blob/master/LICENCE)
+
+また、このUserscriptは[totoraj930](https://github.com/totoraj930)氏の[dokaben-css](https://github.com/totoraj930/dokaben-css)を使用しています。使いやすかったからね、しょうがないね。
 
 ## 作者および連絡先
 恒心教やる夫路線
