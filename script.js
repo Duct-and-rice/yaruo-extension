@@ -82,9 +82,12 @@ selectors.youtube.each(function() {
 		return true;
 	}
 
-	var confCheck = false;
-	var confs = localStorage.getItem('yaruo-ext-conf').split('\n'),
-		i;
+	var confCheck = false,
+		confs = '';
+	if (localStorage.getItem('yaruo-ext-conf') != null) {
+		confs = localStorage.getItem('yaruo-ext-conf').split('\n');
+	};
+	var i;
 
 	selectors.thisresname = $(this).prev('dt').children('font,a[href="mailto:sage"]').text();
 	var term = (selectors.thisresname === selectors.firstname.text());
