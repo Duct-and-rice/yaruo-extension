@@ -30,11 +30,13 @@ Yaruo-Extension
 ### YouTube埋め込み機能
     <youtube [VIDEO_ID] [TIME]>
     例:<youtube LIlZCmETvsY 2:08>  
-例のような形式で、[https://www.youtube.com/watch?v=LIlZCmETvsY](https://www.youtube.com/watch?v=LIlZCmETvsY)が2:08から再生されます。
+例のような形式で、該当レスが表示された時[https://www.youtube.com/watch?v=LIlZCmETvsY](https://www.youtube.com/watch?v=LIlZCmETvsY)が2:08から再生されます。
+
+該当レスが画面外にある場合はスクロールで表示された時再生されます。
 
 このスクリプトは、上記が一個でもあるレスは容赦なく埋め込みとみなします。複数ある場合は最初のタグを参照しますが、一応1つにするようにしたほうがベターです。
 
-また、XSS対策で該当レスと>>1と名前が一致していないとやってくれない仕様なはずなので、短編スレでは効きません。
+また、XSS対策で該当レスと>>1と名前が一致していないとやってくれない仕様なはずなので、短編スレでは効きません。また同様の理由で普通のやる夫板でも効かないので、optionを使用してください。
 
 ### ドガベン機能
     <dogaben nokomaochi|nobig|nofont|s<ミリ秒> "[内容]">
