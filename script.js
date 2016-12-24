@@ -83,7 +83,7 @@ selectors.youtube.each(function() {
 	}
 
 	var confCheck = false;
-	var confs = localStorage.getItem('conf').split('\n'),
+	var confs = localStorage.getItem('yaruo-ext-conf').split('\n'),
 		i;
 
 	selectors.thisresname = $(this).prev('dt').children('font,a[href="mailto:sage"]').text();
