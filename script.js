@@ -73,6 +73,7 @@ var selectors = {
 
 if (location.hostname === 'bbs.yaruyomi.com') {
 	selectors.youtube = $('span[ng-bind-html="res.body"]:contains("youtube")');
+	selectors.dokaben = $('span[ng-bind-html="res.body"]:contains("dokaben")');
 	selectors.firstname = $('span[ng-bind-html="res.name"]:first');
 }
 selectors.youtube.each(function() {
@@ -114,11 +115,11 @@ selectors.youtube.each(function() {
 selectors.dokaben.each(function() {
 	var regex = /&lt;dokaben\s*(?:((?:nokomaochi\s+|s\d+\s+|nofont\s+|nobig\s+)*))?\s*"([^\n]+)"\s*&gt;/g;
 
+	console.log($(this).html());
 	if ($(this).html().match(regex) == void 0) {
 		return true;
 	}
 	var str = $(this).html().replace(regex, function(a, t, c) {
-		console.log(a, t, c);
 		if (t != undefined) {
 			var arr = t.split(/\s/),
 				komaochi = 'dkbn-steps',
