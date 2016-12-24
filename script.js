@@ -116,7 +116,7 @@ selectors.youtube.each(function() {
 });
 
 selectors.dokaben.each(function() {
-	var regex = /&lt;dokaben\s*(?:((?:nokomaochi\s+|s\d+\s+|nofont\s+|nobig\s+)*))?\s*"([^\n]+)"\s*&gt;/g;
+	var regex = /&lt;dokaben\s*(?:((?:nokomaochi\s+|s\d+\s+|nofont\s+|nobig\s+|noloop\s+)*))?\s*"([^\n]+)"\s*&gt;/g;
 
 	console.log($(this).html());
 	if ($(this).html().match(regex) == void 0) {
