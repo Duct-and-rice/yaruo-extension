@@ -1,16 +1,6 @@
-// ==UserScript==
-// @name         yaruo-extension
-// @namespace    https://github.com/Duct-and-rice/yaruo-extension
-// @version      0.0.1
-// @description  A userscript for Yaruo Cluster
-// @author       The Department of Yaruo of Koushinkyo
-// @match        http://jbbs.shitaraba.net/bbs/read.cgi/*
-// @match        http://bbs.yaruyomi.com/test/read.cgi/ban/*
-// @grant        none
-// ==/UserScript==
-
 require('jquery-inview');
 var YouTubePlayer = require('youtube-player');
+// function main(GM_xmlhttpRequest){
 $('head').append($('<link href="https://cdn.rawgit.com/Duct-and-rice/dokaben-css/master/dokaben.css" rel="stylesheet">'));
 $('body').append($('<div id="yaruo-ext-video"><div id="yaruo-ext-player"></div></div><button id="yaruo-ext-button">option</button>'));
 var youtubeRes = new Array();
@@ -64,6 +54,7 @@ player.on('stateChange', function(event) {
 var selectors = {
 	youtube: $('dd:contains("youtube")'),
 	dokaben: $('dd:contains("dokaben")'),
+	lyrics: $('dd:contains("lyrics")'),
 	firstname: $('dt:first').children('font,a[href="mailto:sage"]'),
 	thisresheader: function(t) {
 		return $(t).prev('dt').text();
@@ -74,6 +65,7 @@ var selectors = {
 if (location.hostname === 'bbs.yaruyomi.com') {
 	selectors.youtube = $('span[ng-bind-html="res.body"]:contains("youtube")');
 	selectors.dokaben = $('span[ng-bind-html="res.body"]:contains("dokaben")');
+	selectors.lyrics = $('span[ng-bind-html="res.body"]:contains("lyrics")');
 	selectors.firstname = $('span[ng-bind-html="res.name"]:first');
 }
 selectors.youtube.each(function() {
@@ -118,7 +110,7 @@ selectors.youtube.each(function() {
 selectors.dokaben.each(function() {
 	var regex = /&lt;dokaben\s*(?:((?:nokomaochi\s+|s\d+\s+|nofont\s+|nobig\s+|noloop\s+)*))?\s*"([^\n]+)"\s*&gt;/g;
 
-	console.log($(this).html());
+	// console.log($(this).html());
 	if ($(this).html().match(regex) == void 0) {
 		return true;
 	}
@@ -129,7 +121,7 @@ selectors.dokaben.each(function() {
 				speed = '',
 				font = 'dkbn-text',
 				size = 'font-size: 5em;';
-			console.log(arr);
+			// console.log(arr);
 			if (arr.indexOf('nokomaochi') >= 0) {
 				komaochi = '';
 			}
@@ -153,3 +145,36 @@ selectors.dokaben.each(function() {
 	}).split('\\n').join('<br>');
 	$(this).html(str);
 });
+
+selectors.lyrics.each(function() {
+	var args = $(this).text().match(/<lyrics\s*([^\s]+)\s*(\d+)\s*>/);
+	if (args == void 0) {
+		return true;
+	}
+	selectors.thisresname = $(this).prev('dt').children('font,a[href="mailto:sage"]').text();
+	var term = (selectors.thisresname === selectors.firstname.text());
+	if (location.hostname === 'bbs.yaruyomi.com') {
+		selectors.thisresname = $(this).prevAll('span[ng-bind-html="res.name"]').text();
+		term = false;
+	}
+	if(term){
+		var t=$(this);
+		xmlhttpRequest({
+			url:'h'+args[1],
+			method:'URL',
+			onload:function(res){
+				// console.log(res.responseText);
+				var regex=/<li class="comment-set">\n<ul class="comment-info">\n<li class="comment-author">(\d)+\.\n<font color="#008000"><b>.+<\/b><\/font><\/li><li class="comment-date">\d{4}年\d{2}月\d{2}日 \d{2}:\d{2} ID:.+<\/li>\n<li class="comment-body">\n([\s\S^<>]+?)\n<\/ul>\n<\/li>/;
+				var r=res.responseText.match(new RegExp(regex,'g'));
+				console.log(r);
+				console.log(args,r[parseInt(args[2])-1].match(new RegExp(regex)));
+				t.html(r[parseInt(args[2])-1].match(new RegExp(regex))[2]);
+			}
+		})
+		$(this).attr({
+			class:'aaExist'
+		})
+	}
+});
+// }
+// window.mainYaruoExt=main;

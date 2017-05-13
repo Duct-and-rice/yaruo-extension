@@ -7,7 +7,8 @@
 // @match        http://jbbs.shitaraba.net/bbs/read.cgi/*
 // @match        http://bbs.yaruyomi.com/test/read.cgi/ban/*
 // @match        http://yaruoshelter.com/test/read.cgi/yaruo001/*
-// @grant        none
+// @downloadURL  http://localhost:8080/bundle.js
+// @grant        GM_xmlhttpRequest
 // ==/UserScript==
 
-(function(){document.body.appendChild(document.createElement('script')).src='https://rawgit.com/Duct-and-rice/yaruo-extension/master/bundle.js';})();
+(function(){document.body.appendChild(document.createElement('script')).src='http://localhost:8080/bundle.js';main(GM_xmlhttpRequest);})();
