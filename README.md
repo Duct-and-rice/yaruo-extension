@@ -46,6 +46,13 @@ Yaruo-Extension
 
 この機能はXSS対策がついていないので頑張ろう。
 
+### 歌詞引用機能
+    <lyrics http://blog.livedoor.jp/mukankei961/archives/51964366.html レス番>
+    例:<lyrics http://blog.livedoor.jp/mukankei961/archives/51964366.html 2>
+で歌詞引用が出来ます。
+
+確かこれだとリンク扱いになるはずなので、著作権違反にはならないはず……？
+
 ## 開発してくれる人向け
 
 webpackでやってますので、node、npmとwebpackをまず入れてください。script.jsをbundle.jsに変換し、それをyaruo-extension.user.jsで読み込んでます。  
