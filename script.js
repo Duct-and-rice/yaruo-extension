@@ -166,8 +166,8 @@ selectors.lyrics.each(function() {
 				// console.log(res.responseText);
 				var regex=/<li class="comment-set">\n<ul class="comment-info">\n<li class="comment-author">(\d)+\.\n<font color="#008000"><b>.+<\/b><\/font><\/li><li class="comment-date">\d{4}年\d{2}月\d{2}日 \d{2}:\d{2} ID:.+<\/li>\n<li class="comment-body">\n([\s\S^<>]+?)\n<\/ul>\n<\/li>/;
 				var r=res.responseText.match(new RegExp(regex,'g'));
-				console.log(r);
-				console.log(args,r[parseInt(args[2])-1].match(new RegExp(regex)));
+				// console.log(r);
+				// console.log(args,r[parseInt(args[2])-1].match(new RegExp(regex)));
 				t.html(r[parseInt(args[2])-1].match(new RegExp(regex))[2]);
 			}
 		})
