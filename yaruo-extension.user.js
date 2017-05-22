@@ -11,4 +11,4 @@
 // @grant        GM_xmlhttpRequest
 // ==/UserScript==
 
-(function(){document.body.appendChild(document.createElement('script')).src='https://rawgit.com/Duct-and-rice/yaruo-extension/feature/bundle.js';main(GM_xmlhttpRequest);})();
+(function(){xmlhttpRequest=GM_xmlhttpRequest;document.body.appendChild(document.createElement('script')).src='https://rawgit.com/Duct-and-rice/yaruo-extension/feature/bundle.js';})();
